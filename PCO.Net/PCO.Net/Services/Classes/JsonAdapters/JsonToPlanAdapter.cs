@@ -21,7 +21,7 @@ namespace PCO.Net
                 {
                     var plan = new Plan
                     {
-                        Id = Convert.ToInt32(jsonPlan["id"]),
+                        Id = (int)jsonPlan["id"],
                         Title = (string)jsonPlan["attributes"]["title"],
                         SeriesTitle = (string)jsonPlan["attributes"]["series_title"],
                         Time = DateTime.Parse((string)jsonPlan["attributes"]["sort_date"], CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal)

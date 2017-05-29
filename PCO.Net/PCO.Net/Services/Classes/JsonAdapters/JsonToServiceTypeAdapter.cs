@@ -20,7 +20,7 @@ namespace PCO.Net
                 {
                     var serviceType = new ServiceType
                     {
-                        Id = Convert.ToInt32(jsonServiceType["id"]),
+                        Id = (int)jsonServiceType["id"],
                         Name = (string)jsonServiceType["attributes"]["name"]
                     };
 

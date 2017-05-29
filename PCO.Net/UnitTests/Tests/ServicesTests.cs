@@ -1,4 +1,4 @@
-﻿﻿using NUnit.Framework;
+﻿using NUnit.Framework;
 using PCO.Net;
 using PCLMock;
 using System.Threading.Tasks;
@@ -19,7 +19,7 @@ namespace UnitTests
 
             var services = new Services();
             var plans = await services.GetPlansAsync("Central Gathering", 4);
-
+            Assert.True(plans.Count == 4);
         }
 
         [Test]
@@ -27,8 +27,8 @@ namespace UnitTests
         {
             var mockTransport = new TransportMock();
             mockTransport.When(x => x.GetJsonResult(It.IsAny<string>()))
-                         .Return(() => 
-                            { 
+                         .Return(() =>
+                            {
                                 var tcs = new TaskCompletionSource<string>();
                                 tcs.SetResult(null);
                                 return tcs.Task;
@@ -53,8 +53,8 @@ namespace UnitTests
             mockTransport.When(x => x.GetJsonResult(It.IsAny<string>()))
                          .Return(() =>
                             {
-	                            var tcs = new TaskCompletionSource<string>();
-	                            tcs.SetResult(count == 0 ? singleServiceTypeJson : singlePlanJson);
+                                var tcs = new TaskCompletionSource<string>();
+                                tcs.SetResult(count == 0 ? singleServiceTypeJson : singlePlanJson);
                                 count++;
                                 return tcs.Task;
                             });

@@ -1,8 +1,8 @@
 ﻿using System;
 namespace PCO.Net
 {
-	public interface IClassFactory
-	{
-		ITransport CreateTransport();
-	}
+    public interface IClassFactory
+    {
+        ITransport CreateTransport();
+    }
 }
