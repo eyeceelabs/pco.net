@@ -13,7 +13,7 @@ namespace UnitTests
 
         [Test]
         [Ignore]
-        public async void GetPlans_Live()
+        public async void GetPlansAync_Live_Test_Not_A_UT()
         {
             ClassFactory.Instance = new ClassFactoryImpl();
 
